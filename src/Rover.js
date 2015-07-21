@@ -1,7 +1,6 @@
 /**
  * Created by nick on 21/07/2015.
  */
-
 var Rover = {
     'position' : [0,0,'N'],
     'setup' : function(config){

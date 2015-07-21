@@ -2,6 +2,7 @@
  * Created by nick on 21/07/2015.
  */
 var Rover = require('./Rover');
+var Pluto = require('./Pluto');
 
 describe("The rover", function() {
     it("should move forwards one step", function () {
@@ -39,5 +40,17 @@ describe("The rover", function() {
     it("should end up in the right place after a complex instruction", function () {
         Rover.setup([0,0,'N']);
         expect(Rover.move("FFFRFLB")).toEqual([1,2,'N']);
+    });
+});
+
+describe("Pluto...", function() {
+    it("should be the size we tell it to be, and should let you set the buggy's start position correctly", function () {
+        Pluto.setup([10,10], [0,1,'N']);
+        expect(Pluto._size).toEqual([10,10]);
+        expect(Pluto._buggyStart).toEqual([0,1,'N']);
+    });
+    it("should wrap movements beyond its borders", function () {
+        Rover.setup([0,1,'N']);
+        expect(Rover.move("B")).toEqual([0,0,'N']);
     });
 });
