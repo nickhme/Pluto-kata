@@ -12,10 +12,10 @@ describe("The rover", function() {
         expect(Pluto._roverPosition).toEqual([0,1,'N']);
     });
     it("should move backwards one step", function () {
-        Pluto._setup([10,10], [0,0,'N']);
+        Pluto._setup([10,10], [0,1,'N']);
         Rover.setup(Pluto);
         Rover.move("B");
-        expect(Pluto._roverPosition).toEqual([0,-1,'N']);
+        expect(Pluto._roverPosition).toEqual([0,0,'N']);
     });
     it("should end up in the same place after a forward and back", function () {
         Pluto._setup([10,10], [0,0,'N']);
@@ -59,16 +59,10 @@ describe("The rover", function() {
         Rover.move("FFFRFLB");
         expect(Pluto._roverPosition).toEqual([1,2,'N']);
     });
-});
-
-describe("Pluto...", function() {
-    it("should be the size we tell it to be, and should let you set the buggy's start position correctly", function () {
-        Pluto._setup([10,10], [0,1,'N']);
-        expect(Pluto._size).toEqual([10,10]);
-        expect(Pluto._roverPosition).toEqual([0,1,'N']);
+    it("should be able to wrap around pluto if it leaves the borders", function () {
+        Pluto._setup([10,10], [0,0,'N']);
+        Rover.setup(Pluto);
+        Rover.move("LF");
+        expect(Pluto._roverPosition).toEqual([10,0,'W']);
     });
-    //it("should wrap movements beyond its borders", function () {
-    //    Rover.setup([0,1,'N']);
-    //    expect(Rover.move("B")).toEqual([0,0,'N']);
-    //});
 });

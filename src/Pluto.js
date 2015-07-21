@@ -14,27 +14,54 @@ var Pluto = {
             var command = moveString.charAt(i);
             var xPos = this._roverPosition[0];
             var yPos = this._roverPosition[1];
+            var xMax = this._size[0];
+            var yMax = this._size[1];
+
             var direction = this._roverPosition[2];
 
             if(command === 'F'){
                 if(direction === 'N'){
-                    this._roverPosition = [xPos, yPos + 1, direction];
+                    if(yPos === yMax)
+                        this._roverPosition = [xPos, 0, direction];
+                    else
+                        this._roverPosition = [xPos, yPos + 1, direction];
                 } else if(direction === 'E'){
-                    this._roverPosition = [xPos + 1, yPos, direction];
+                    if(xPos === xMax)
+                        this._roverPosition = [0, yPos, direction];
+                    else
+                        this._roverPosition = [xPos + 1, yPos, direction];
                 } else if(direction === 'S'){
-                    this._roverPosition = [xPos, yPos - 1, direction];
+                    if(yPos === 0)
+                        this._roverPosition = [xPos, yMax, direction];
+                    else
+                        this._roverPosition = [xPos, yPos - 1, direction];
                 } else if(direction === 'W'){
-                    this._roverPosition = [xPos - 1, yPos, direction];
+                    if(xPos === 0)
+                        this._roverPosition = [xMax, yPos, direction];
+                    else
+                        this._roverPosition = [xPos - 1, yPos, direction];
                 }
             } else if(command === 'B'){
                 if(direction === 'N'){
-                    this._roverPosition = [xPos, yPos - 1, direction];
+                    if(yPos === 0)
+                        this._roverPosition = [xPos, yMax, direction];
+                    else
+                        this._roverPosition = [xPos, yPos - 1, direction];
                 } else if(direction === 'E'){
-                    this._roverPosition = [xPos - 1, yPos, direction];
+                    if(xPos === 0)
+                        this._roverPosition = [xMax, yPos, direction];
+                    else
+                        this._roverPosition = [xPos - 1, yPos, direction];
                 } else if(direction === 'S'){
-                    this._roverPosition = [xPos, yPos + 1, direction];
+                    if(yPos == yMax)
+                        this._roverPosition = [xPos, 0, direction];
+                    else
+                        this._roverPosition = [xPos, yPos + 1, direction];
                 } else if(direction === 'W'){
-                    this._roverPosition = [xPos + 1, yPos, direction];
+                    if(xPos = xMax)
+                        this._roverPosition = [0, yPos, direction];
+                    else
+                        this._roverPosition = [xPos + 1, yPos, direction];
                 }
             } else if(command === 'L'){
                 var newDirection;
