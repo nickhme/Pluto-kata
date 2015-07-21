@@ -47,7 +47,7 @@ describe("Pluto...", function() {
     it("should be the size we tell it to be, and should let you set the buggy's start position correctly", function () {
         Pluto.setup([10,10], [0,1,'N']);
         expect(Pluto._size).toEqual([10,10]);
-        expect(Pluto._buggyStart).toEqual([0,1,'N']);
+        expect(Pluto._roverPosition).toEqual([0,1,'N']);
     });
     it("should wrap movements beyond its borders", function () {
         Rover.setup([0,1,'N']);
