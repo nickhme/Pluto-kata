@@ -15,9 +15,25 @@ var Rover = {
             var direction = this.position[2];
 
             if(command === 'F'){
-                this.position = [xPos, yPos + 1, direction]
+                if(direction === 'N'){
+                    this.position = [xPos, yPos + 1, direction];
+                } else if(direction === 'E'){
+                    this.position = [xPos + 1, yPos, direction];
+                } else if(direction === 'S'){
+                    this.position = [xPos, yPos - 1, direction];
+                } else if(direction === 'W'){
+                    this.position = [xPos - 1, yPos, direction];
+                }
             } else if(command === 'B'){
-                this.position = [xPos, yPos - 1, direction];
+                if(direction === 'N'){
+                    this.position = [xPos, yPos - 1, direction];
+                } else if(direction === 'E'){
+                    this.position = [xPos - 1, yPos, direction];
+                } else if(direction === 'S'){
+                    this.position = [xPos, yPos + 1, direction];
+                } else if(direction === 'W'){
+                    this.position = [xPos + 1, yPos, direction];
+                }
             } else if(command === 'L'){
                 var newDirection;
                 if(direction === 'N'){

@@ -34,10 +34,10 @@ describe("The rover", function() {
     });
     it("should move forward 3 steps, face east, forward 1 step", function () {
         Rover.setup([0,0,'N']);
-        expect(Rover.move("FFFR")).toEqual([1,3,'E']);
+        expect(Rover.move("FFFRF")).toEqual([1,3,'E']);
     });
-    //it("should end up in the right place after a complex instruction", function () {
-    //    Rover.setup([0,0,'N']);
-    //    expect(Rover.move("FFFRFLB")).toEqual([1,2,'N']);
-    //});
+    it("should end up in the right place after a complex instruction", function () {
+        Rover.setup([0,0,'N']);
+        expect(Rover.move("FFFRFLB")).toEqual([1,2,'N']);
+    });
 });
