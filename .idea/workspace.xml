@@ -45,21 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Pluto.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Pluto.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Pluto.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.0">
-              <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.7711138">
+              <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Rover-test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Rover-test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Rover-test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85312116">
-              <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -86,8 +86,8 @@
       <list>
         <option value="$PROJECT_DIR$/karma.conf.js" />
         <option value="$PROJECT_DIR$/src/Rover.js" />
-        <option value="$PROJECT_DIR$/src/Pluto.js" />
         <option value="$PROJECT_DIR$/src/Rover-test.js" />
+        <option value="$PROJECT_DIR$/src/Pluto.js" />
       </list>
     </option>
   </component>
@@ -423,12 +423,12 @@
       <created>1437483618796</created>
       <option name="number" value="Default" />
       <updated>1437483618796</updated>
-      <workItem from="1437483621900" duration="6930000" />
+      <workItem from="1437483621900" duration="7765000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6930000" />
+    <option name="totallyTimeSpent" value="7765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1220" y="23" width="1340" height="1352" extended-state="0" />
@@ -485,21 +485,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Pluto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.0">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Rover-test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85312116">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="70" column="25" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Pluto.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7711138">
+          <caret line="67" column="24" selection-start-line="67" selection-start-column="24" selection-end-line="67" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

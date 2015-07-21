@@ -65,4 +65,10 @@ describe("The rover", function() {
         Rover.move("LF");
         expect(Pluto._roverPosition).toEqual([10,0,'W']);
     });
+    it("should halt on an obstacle", function () {
+        Pluto._setup([10,10], [0,0,'N'], [[0,2]]);
+        Rover.setup(Pluto);
+        Rover.move("FF");
+        expect(Pluto._roverPosition).toEqual([0,1,'N']);
+    });
 });

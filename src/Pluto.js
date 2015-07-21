@@ -4,10 +4,29 @@
 var Pluto = {
     '_size' : [10,10],
     '_roverPosition' : [0,0,'N'],
-    'obstacles' : [],
-    '_setup': function(size, roverPosition){
+    '_obstacles' : [],
+    '_setup': function(size, roverPosition, obstacles){
         this._size = size;
         this._roverPosition = roverPosition;
+        if(obstacles)
+            this._obstacles = obstacles;
+    },
+    '_moveAfterObstaclesCheck' : function(newPosition){
+        var xPos = newPosition[0];
+        var yPos = newPosition[1];
+
+        var itsAnObstacle = false;
+        for ( var i = 0; i < this._obstacles.length; i++ ) {
+            var obstacleX = this._obstacles[i][0];
+            var obstacleY = this._obstacles[i][1];
+
+            if(xPos === obstacleX && yPos === obstacleY)
+                itsAnObstacle = true;
+        }
+        if(itsAnObstacle)
+            alert("its an obstacle");
+        else
+            this._roverPosition = newPosition;
     },
     'tryMove' : function(moveString){
         for ( var i = 0; i < moveString.length; i++ ) {
@@ -22,46 +41,46 @@ var Pluto = {
             if(command === 'F'){
                 if(direction === 'N'){
                     if(yPos === yMax)
-                        this._roverPosition = [xPos, 0, direction];
+                        this._moveAfterObstaclesCheck([xPos, 0, direction]);
                     else
-                        this._roverPosition = [xPos, yPos + 1, direction];
+                        this._moveAfterObstaclesCheck([xPos, yPos + 1, direction]);
                 } else if(direction === 'E'){
                     if(xPos === xMax)
-                        this._roverPosition = [0, yPos, direction];
+                        this._moveAfterObstaclesCheck([0, yPos, direction]);
                     else
-                        this._roverPosition = [xPos + 1, yPos, direction];
+                        this._moveAfterObstaclesCheck([xPos + 1, yPos, direction]);
                 } else if(direction === 'S'){
                     if(yPos === 0)
-                        this._roverPosition = [xPos, yMax, direction];
+                        this._moveAfterObstaclesCheck([xPos, yMax, direction]);
                     else
-                        this._roverPosition = [xPos, yPos - 1, direction];
+                        this._moveAfterObstaclesCheck([xPos, yPos - 1, direction]);
                 } else if(direction === 'W'){
                     if(xPos === 0)
-                        this._roverPosition = [xMax, yPos, direction];
+                        this._moveAfterObstaclesCheck([xMax, yPos, direction]);
                     else
-                        this._roverPosition = [xPos - 1, yPos, direction];
+                        this._moveAfterObstaclesCheck([xPos - 1, yPos, direction]);
                 }
             } else if(command === 'B'){
                 if(direction === 'N'){
                     if(yPos === 0)
-                        this._roverPosition = [xPos, yMax, direction];
+                        this._moveAfterObstaclesCheck([xPos, yMax, direction]);
                     else
-                        this._roverPosition = [xPos, yPos - 1, direction];
+                        this._moveAfterObstaclesCheck([xPos, yPos - 1, direction]);
                 } else if(direction === 'E'){
                     if(xPos === 0)
-                        this._roverPosition = [xMax, yPos, direction];
+                        this._moveAfterObstaclesCheck([xMax, yPos, direction]);
                     else
-                        this._roverPosition = [xPos - 1, yPos, direction];
+                        this._moveAfterObstaclesCheck([xPos - 1, yPos, direction]);
                 } else if(direction === 'S'){
                     if(yPos == yMax)
-                        this._roverPosition = [xPos, 0, direction];
+                        this._moveAfterObstaclesCheck([xPos, 0, direction]);
                     else
-                        this._roverPosition = [xPos, yPos + 1, direction];
+                        this._moveAfterObstaclesCheck([xPos, yPos + 1, direction]);
                 } else if(direction === 'W'){
                     if(xPos = xMax)
-                        this._roverPosition = [0, yPos, direction];
+                        this._moveAfterObstaclesCheck([0, yPos, direction]);
                     else
-                        this._roverPosition = [xPos + 1, yPos, direction];
+                        this._moveAfterObstaclesCheck([xPos + 1, yPos, direction]);
                 }
             } else if(command === 'L'){
                 var newDirection;
