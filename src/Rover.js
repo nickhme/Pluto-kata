@@ -13,11 +13,35 @@ var Rover = {
             var xPos = this.position[0];
             var yPos = this.position[1];
             var direction = this.position[2];
-            switch(command){
-                case 'F' : this.position = [xPos, yPos + 1, direction]; break;
-                case 'R' : this.position = [xPos + 1, yPos, 'E']; break;
-                case 'B' : this.position = [xPos + 1, yPos - 1, 'S']; break;
-                case 'L' : this.position = [xPos - 1, yPos, 'W']; break;
+
+            if(command === 'F'){
+                this.position = [xPos, yPos + 1, direction]
+            } else if(command === 'B'){
+                this.position = [xPos, yPos - 1, direction];
+            } else if(command === 'L'){
+                var newDirection;
+                if(direction === 'N'){
+                    newDirection = 'W';
+                } else if(direction === 'E'){
+                    newDirection = 'N';
+                } else if(direction === 'S'){
+                    newDirection = 'E';
+                } else if(direction === 'W'){
+                    newDirection = 'S';
+                }
+                this.position = [xPos + 1, yPos - 1, newDirection];
+            } else if(command === 'R'){
+                var newDirection;
+                if(direction === 'N'){
+                    newDirection = 'E';
+                } else if(direction === 'E'){
+                    newDirection = 'S';
+                } else if(direction === 'S'){
+                    newDirection = 'W';
+                } else if(direction === 'W'){
+                    newDirection = 'N';
+                }
+                this.position = [xPos + 1, yPos - 1, newDirection];
             }
         }
         return this.position;
