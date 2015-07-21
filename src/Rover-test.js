@@ -3,8 +3,13 @@
  */
 var Rover = require('./Rover');
 
-describe("a test", function() {
-    it("should work", function () {
-        expect(Rover).toBe(true);
+describe("The rover", function() {
+    it("should move forwards one step", function () {
+        Rover.setup([0,0,'N']);
+        expect(Rover.move("F")).toEqual([0,1,'N']);
+    });
+    it("should move backwards one step", function () {
+        Rover.setup([0,1,'N']);
+        expect(Rover.move("F")).toEqual([0,0,'N']);
     });
 });

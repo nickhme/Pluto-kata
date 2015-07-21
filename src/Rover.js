@@ -1,5 +1,7 @@
 /**
  * Created by nick on 21/07/2015.
  */
-var Rover = true;
+
+
+var Rover = {};
 module.exports = Rover;
