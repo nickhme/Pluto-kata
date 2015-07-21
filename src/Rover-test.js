@@ -12,4 +12,12 @@ describe("The rover", function() {
         Rover.setup([0,1,'N']);
         expect(Rover.move("B")).toEqual([0,0,'N']);
     });
+    it("should turn right from north and face east", function () {
+        Rover.setup([0,0,'N']);
+        expect(Rover.move("R")).toEqual([0,0,'E']);
+    });
+    it("should turn left from north and face west", function () {
+        Rover.setup([0,0,'N']);
+        expect(Rover.move("L")).toEqual([0,0,'W']);
+    });
 });
