@@ -29,7 +29,7 @@ var Rover = {
                 } else if(direction === 'W'){
                     newDirection = 'S';
                 }
-                this.position = [xPos + 1, yPos - 1, newDirection];
+                this.position = [xPos, yPos, newDirection];
             } else if(command === 'R'){
                 var newDirection;
                 if(direction === 'N'){
@@ -41,7 +41,7 @@ var Rover = {
                 } else if(direction === 'W'){
                     newDirection = 'N';
                 }
-                this.position = [xPos + 1, yPos - 1, newDirection];
+                this.position = [xPos, yPos, newDirection];
             }
         }
         return this.position;

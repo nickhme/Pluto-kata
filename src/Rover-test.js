@@ -10,6 +10,6 @@ describe("The rover", function() {
     });
     it("should move backwards one step", function () {
         Rover.setup([0,1,'N']);
-        expect(Rover.move("F")).toEqual([0,0,'N']);
+        expect(Rover.move("B")).toEqual([0,0,'N']);
     });
 });
